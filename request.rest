@@ -1,0 +1,123 @@
+### Register a New User
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+    "username": "user123",
+    "email": "user123@example.com",
+    "password": "securepassword"
+}
+
+### Login a User
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "user123@example.com",
+    "password": "securepassword"
+}
+
+### Logout a User
+POST http://localhost:3000/users/logout
+
+### Refresh Token
+POST http://localhost:3000/users/token
+Content-Type: application/json
+
+{
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U"
+}
+
+### Get All Users
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Get a User by ID
+GET http://localhost:3000/users/6751c26b85469d4ce3486d20
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Update a User
+PUT http://localhost:3000/users/6751c26b85469d4ce3486d20
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+{
+    "username": "updatedUser123",
+    "email": "updateduser123@example.com",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "bio": "Updated bio"
+}
+
+### Delete a User
+DELETE http://localhost:3000/users/674cc1084c4eca5998992c73
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Add a New Post
+POST http://localhost:3000/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+{
+    "title": "My First Post",
+    "content": "This is the content of my first post",
+    "sender": "6751c26b85469d4ce3486d20"
+}
+
+### Get All Posts
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Get a Post by ID
+GET http://localhost:3000/posts/674cc1554c4eca5998992c7c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Get Posts by Sender
+GET http://localhost:3000/posts/sender/6751c26b85469d4ce3486d20
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Update a Post
+PUT http://localhost:3000/posts/674cc1554c4eca5998992c7c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+{
+    "title": "Updated Post Title",
+    "content": "Updated content of the post"
+}
+
+### Delete a Post
+DELETE http://localhost:3000/posts/674cba03b267b637edac9ca5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Add a New Comment
+POST http://localhost:3000/comments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+{
+    "content": "This is a comment",
+    "sender": "6751c26b85469d4ce3486d20",
+    "postId": "6751c2ed85469d4ce3486d2a"
+}
+
+### Get All Comments
+GET http://localhost:3000/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Get a Comment by ID
+GET http://localhost:3000/comments/6751c30885469d4ce3486d33
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+### Update a Comment
+PUT http://localhost:3000/comments/6751c30885469d4ce3486d33
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
+
+{
+    "content": "Updated comment content"
+}
+
+### Delete a Comment
+DELETE http://localhost:3000/comments/6751c30885469d4ce3486d33
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzUxZDY2NzI3YjQ3NGY3ZDZlZDJiM2YiLCJpYXQiOjE3MzM0MzAzNDUsImV4cCI6MTczMzQzMTI0NX0.l792lhK23x3NyRhXysQy9bv2ARzJNUTA7ctHskFhB7U
